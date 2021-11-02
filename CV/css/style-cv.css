@@ -1,0 +1,315 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(169, 239, 255);
+    flex-direction: column;
+}
+.principal{
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    min-height: 1000px;
+    min-width: 100px;
+    margin: 50px;
+    margin-bottom: 20px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    box-shadow: 0 35px 55px rgba(0, 0, 0, 0.3);
+}
+.col-izq{
+    position: relative;
+    background-color: #00045B;
+    padding: 40px;
+}
+.perfil-profesional{
+    position: relative;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid white;
+}
+.perfil-profesional .contenedor-foto{
+    position: relative;
+    width: 200px;
+    height:200px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.perfil-profesional .contenedor-foto img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.perfil-profesional h2{
+    font-size: 1.8em;
+    color: white;
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.4em;
+    font-family: 'Bebas Neue', cursive;
+    font-weight: 400;
+}
+.perfil-profesional h2 span{
+    font-size: 0.8em;
+    font-weight: 300;
+}
+.info-contacto{
+    padding-top: 30px;
+}
+.info-contacto h3{
+    padding-bottom: 5px;
+    color: rgb(58, 143, 255);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-bottom: 1px solid white;
+}
+.info-contacto ul{
+    
+    position: relative;
+}
+.info-contacto ul li{
+    position: relative;
+    list-style: none;
+    margin: 10px 0;
+    color: white;
+    font-weight: 300;
+}
+.info-contacto .icono img{
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+}
+.educacion{
+    padding-top: 30px;
+}
+.educacion h3{
+    padding-bottom: 5px;
+    color: rgb(58, 143, 255);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-bottom: 1px solid white;
+}
+.educacion ul{
+    position: relative;
+}
+.educacion h5{
+    color: rgb(58, 143, 255);
+}
+.educacion h4{
+    font-weight: 300;
+}
+.educacion ul li{
+    position: relative;
+    list-style: none;
+    margin: 15px 0;
+    color: white;
+}
+
+.lenguajes{
+    padding-top: 30px;
+}
+.lenguajes h3{
+    padding-bottom: 5px;
+    color: rgb(58, 143, 255);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-bottom: 1px solid white;
+}
+.lenguajes ul{
+    position: relative;
+}
+.lenguajes h5{
+    color: rgb(58, 143, 255);
+}
+.lenguajes h4{
+    font-weight: 300;
+}
+.lenguajes ul li{
+    position: relative;
+    list-style: none;
+    margin: 15px 0;
+    color: white;
+}
+.lenguajes .porcentaje{
+    position: relative;
+    height: 6px;
+    width: 100%;
+    display: block;
+    background-color: rgb(67, 67, 67);
+}
+.lenguajes .porcentaje div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: rgb(58, 143, 255);
+}
+
+.col-der{
+    position: relative;
+    background-color: white;
+    padding: 40px;
+}
+.perfil{
+    margin-bottom: 30px;
+}
+.titulo-dos{
+    color: #00045B;
+    text-transform: uppercase;
+    font-family: 'Bebas Neue', cursive;
+    font-weight: 600;
+    font-size: 2.2em;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+p{
+    font-size: 1.2em;
+    text-align: justify;
+}
+.perfil .contenedor{
+    margin-bottom: 20px;
+}
+.perfil .contenedor h3{
+    color: rgb(58, 143, 255);
+    font-size: 1.5em;
+}
+.perfil .contenedor h4{
+    font-size: 1.2em;
+}
+.perfil .contenedor h5{
+    font-size: 1em
+}
+.habilidades{
+    margin-bottom: 20px;
+}
+.habilidades .contenedor{
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    align-items: center;
+}
+.habilidades .contenedor h4{
+    text-transform: uppercase;
+    padding-bottom: 10px;
+}
+.habilidades .contenedor h4 img{
+    margin-right: 10px;
+}
+.habilidades .contenedor .porcentaje{
+    position: relative;
+    width: 100%;
+    height: 10px;
+    background-color: rgb(228, 228, 228);
+    padding-top: 5px;
+}
+.habilidades .contenedor .porcentaje div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #00045B;
+}
+.intereses ul{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.intereses ul li{
+    list-style: none;
+    font-size: 1.1em;
+}
+.btnDescargar{
+    display: block;
+    width: 15rem;
+    height: 3rem;
+    margin-bottom: 30px;
+    cursor: pointer;
+    background:#00045B;
+    border-radius: 15px;
+    border: none;
+}
+.btnDescargar a{
+    
+    font-family: "Oswald";
+    text-decoration: none;
+    font-size: 2em;
+    color: white
+}
+
+@media (max-width: 1000px) {
+
+    .principal{
+        margin: 10px;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .intereses ul{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .perfil-profesional h2{
+        font-size: 2.5em;
+    }
+    .perfil-profesional h2 span{
+        font-size: 0.8em;
+    }
+    .info-contacto{
+        padding-top: 30px;
+    }
+    .info-contacto h3{
+        font-size: 2em;
+    }
+    .info-contacto ul li{
+        font-size: 1.5em;
+    }
+    .info-contacto .icono img{
+        width: 22px;
+        height: 22px;
+        margin-right: 10px;
+    }
+    .educacion h3{
+        font-size: 2em;
+    }
+    .educacion h5{
+        color: rgb(58, 143, 255);
+        font-size: 1.3em;
+    }
+    .educacion h4{
+        font-weight: 300;
+        font-size: 1.5em;
+    }
+    .lenguajes h3{
+        font-size: 2em;
+    }
+    .lenguajes ul li{
+        font-size: 1.8em;
+    }
+    .btnDescargar{
+        width: 100%;
+        height: 6rem;
+        
+    }
+    
+}
+@media (max-width: 780px){    
+    .habilidades .contenedor{
+        grid-template-columns:repeat(1, 1fr);
+        margin-top: 15px;
+    }
+    
+}

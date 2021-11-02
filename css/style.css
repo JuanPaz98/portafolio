@@ -1,0 +1,636 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+}
+body{
+    overflow-x: hidden;
+}
+body::-webkit-scrollbar{
+    width: 7px;
+    background: white;
+    opacity: 0.1;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: #00045B;
+    border-radius: 5px;
+}
+p{
+    font-weight: 300;
+}
+
+.barra_navegacion{
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background-color: #00045B;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+}
+.barra_navegacion.active{
+    left: 0;
+}
+
+.nav-items{
+    font-family: 'Oswald', sans-serif;
+}
+.banner{
+    position: relative;
+    width: 75%;
+    height: 100%;
+}
+.fondo{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.nav-items{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.nav-items ul{
+    position: relative;
+    width: 100%;
+}
+.nav-items ul li{
+    position: relative;
+    list-style: none;
+    
+}
+.nav-items ul li a{
+    font-size: 3em;
+    font-weight: 500;
+    color: rgb(199, 199, 199);
+    text-decoration: none;
+    margin: 5px 0;
+    margin-left: 100px;
+    display: inline-block;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.nav-items ul li a:hover{
+    color: white;
+	font-weight: bold;
+}
+
+
+.seccion{
+    position: relative;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;    
+    padding: 7rem 7rem;
+    padding-bottom: 0;
+    display: flex;   
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    transition: .5s;
+}
+
+.seccion.active{
+    left: 100%;
+}
+
+.seccion.active .header{
+    position: fixed;
+    top: 0;
+    left: 98%;
+    transition: .5s;
+    background: transparent;
+}
+.boton.active::after{
+    background-color: white;
+}
+.boton.active::before{
+    background-color: white;
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: .5s;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(255, 255, 255 , 1 ) 15%);
+    z-index: 1;
+}
+.boton{
+    position: relative;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.boton::before {
+    position: absolute;
+    content: " ";
+    width: 40px;
+    height: 5px;
+    background: #00045B;
+    transform: translateY(-6px);
+    transition: 0.5s;
+    margin-bottom: 7px;
+}
+.boton::after {
+    position: absolute;
+    content: " ";
+    width: 40px;
+    height: 5px;
+    background: #00045B;
+    transform: translateY(6px) ;
+    transition: 0.5s;
+    margin-top: 7px;
+}
+.boton.active::before {
+    transform: translateY(0px) rotate(45deg);
+    left: -200px;
+    margin-bottom: 0;
+}
+.boton.active::after {
+    transform: translateY(0px) rotate(-45deg);
+    left: -200px;
+    margin-top: 0;
+}
+.btn{
+    position: relative;
+    background: #00045B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 13rem;
+    height: 3rem;
+    color: white;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-size: 26px;
+    border-radius: 15px;
+}
+.btn-cv{
+    position: relative;
+    background: #00045B;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 13rem;
+    height: 3rem;
+    color: white;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-size: 26px;
+    border-radius: 15px;
+}
+.btn:hover{
+    font-weight: bold;
+    font-size: 25px
+}
+.contenedor-perfil{
+    position: relative;
+    display:flex;
+    margin-bottom:4rem;
+    padding-top: 2rem;
+    align-items: center;
+}
+.seccion .contenedor-perfil .foto-perfil{
+    position: relative;
+    background-size: cover;
+    min-width: 21rem;
+    height: 22rem;
+    border-radius: 50%;
+    overflow: hidden;
+    padding-left: 30px;;
+    box-shadow: 0px 0px 15px #090909;
+    filter:grayscale(80%)
+}
+.contenedor-perfil .foto-perfil:hover{
+    filter:none;
+    box-shadow: 0px 0px 15px #0009b5;
+    transition: .5s;
+}
+.foto-perfil img{
+    position: absolute;
+    height: 22.5rem;
+    width: 17.2rem;
+}
+.foto-perfil img:hover{
+    height: 23.5rem;
+    width: 18rem;
+    bottom: 0;
+    transition: 1s;
+}
+
+.foto-perfil img:not(:hover){
+    height: 22.5rem;
+    width: 17.2rem;
+    bottom: 0;
+    transition: 1s;
+}
+
+.perfil-profesional h2{
+    margin-bottom: 15px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 4rem;
+    color: #00045B;
+}
+.perfil-profesional{
+    position: relative;
+    margin-left: 5rem;
+    font-size: 22px;
+    text-align: justify;
+}
+h2{
+    margin-bottom: 15px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.5rem;
+    color: #00045B;
+}
+.sobre_mi{
+    position: relative;
+    font-size: 22px;
+    text-align: justify;
+    padding-top: 6rem;
+}
+.habilidades{
+    width: 100%;
+    left: 0;
+    position: relative;
+    font-size: 22px;
+    text-align: justify;
+    padding-top: 6rem;
+}
+.habilidades ul li{
+    list-style: none;
+}
+.proyectos{
+    position: relative;
+    font-size: 22px;
+    text-align: justify;
+    padding-top: 6rem;
+}
+.contenedor-proyectos{
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+}
+.carta{
+    display: grid;
+    grid-template-columns: 19rem;
+    grid-template-rows: 240px 210px 80px;
+    grid-template-areas: "imagen-carta" "texto-carta" "botones-carta";
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 4px 4px 11px rgba(0,0,0,0.9);
+    text-align: center;
+    margin: 40px;
+    transition: .5s;
+}
+.imagen-carta-uno{
+    grid-area: imagen-carta;/* 
+    background: url("/img/clinica-mujer.png"); */
+    background: url("../img/clinica-mujer.jpg");
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-position: center;
+}
+.imagen-carta-dos{
+    grid-area: imagen-carta;/* 
+    background: url("/img/clinica-mujer.png"); */
+    background: url("../img/portafolio.jpg");
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-position: center;
+}
+.imagen-carta-tres{
+    grid-area: imagen-carta;/* 
+    background: url("/img/clinica-mujer.png"); */
+    background: url("../img/hv.jpg");
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-position: center;
+}
+.texto-carta{
+    grid-area: texto-carta;
+    margin: 20px;
+}
+.texto-carta h3{
+    color: #00045B;
+    font-family: "Oswald";
+}
+.botones-carta{
+    grid-area: botones-carta;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: #00045B;
+}
+.botones-carta .enlace{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    border-right: #000335 solid 1px;
+    font-family: "Oswald";
+}
+.botones-carta .codigo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    border-left: #000335 solid 1px;
+    font-family: "oswald";
+}
+.carta:hover{
+    transform: scale(1.1);
+}
+
+/* .contacto {
+    position: relative;
+    display:flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40rem;   
+    padding-top: 6rem;
+}
+.contacto h2{
+    width: 100%;
+    text-align: center;
+    
+}
+.contacto .formulario-contacto{
+    width: 100%;
+    width: 40rem;
+    height: 24rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #00045B;
+    box-shadow: 0px 0px 20px black;
+    border-radius: 25px;
+}
+.contacto .formulario-contacto .campo{
+    width: 80%;
+    height: 2.5rem;
+    margin: .5rem;
+    border-radius: 15px;
+    border:none;
+    text-align: center;
+    opacity: .9;
+    font-size:20px;
+}
+.contacto .formulario-contacto .campo-mensaje{
+    width: 80%;
+    height: 9rem;
+    margin: .5rem;
+    border-radius: 15px;
+    opacity: .9;
+    resize: none;
+    padding: .5rem;
+    font-size:20px;
+}
+.contacto .formulario-contacto .enviar{
+    width: 80%;
+    height: 2.5rem;
+    margin-top: .5rem;    
+    border-radius: 10px;
+    font-size: 22px;
+    font-family: 'Oswald', sans-serif;
+    color:#00045B;
+    border:none;
+}
+.contacto .formulario-contacto .enviar:hover{
+    cursor: pointer;
+    font-weight: bold;
+    border:none;
+} */
+.foot{
+    position: relative;
+    display:flex;
+    left: 0;
+    padding: 20px 100px;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.foot.active{
+    left: 100%;
+}
+.iconos-redes{
+    position: relative;
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.iconos-redes li{
+    margin-right:20px;
+    opacity: 0.6
+}
+.iconos-redes li:hover{
+    opacity: 1
+}
+.copyright{
+    color:gray;
+    opacity: .7;
+}
+
+/*responsive*/
+
+@media (max-width: 991px)
+{
+    p{
+        font-size: calc(1em + 1vw) 
+    }
+    .seccion{
+        flex-direction: column;
+        padding: 40px;
+        justify-content: center;
+    }
+    .header{
+        padding: 40px 40px;
+    }
+    .contenedor-perfil{
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 2.6rem;
+        
+    }
+    .seccion .contenedor-perfil .foto-perfil{
+        width: 21rem;
+        margin-left: auto;
+        margin-right: auto;
+        filter: none;
+        margin-bottom: 2rem;
+        margin-top: 1.5rem;
+    }
+    .contenedor-perfil .perfil-profesional{
+        margin: 0
+    }
+    .banner{
+        width: 0;
+    }
+
+    .nav-items ul li{
+        margin-bottom: 4rem;
+        text-align: center;
+
+    }
+    .nav-items ul li a{
+        font-size: 4em;
+        margin-left: 0;
+        color: white;
+    }
+    .btn{
+        
+        background: #00045B;
+        width: 14rem;
+        height: 4rem;
+        color: white;
+    }
+    .btn img{
+        width: 5rem;
+        margin:0;
+    }
+    .boton::before {
+        width: 60px;
+        height: 6px;
+        margin-bottom: 10px;
+    }
+    .boton::after {
+        width: 60px;
+        height: 6px;
+        margin-top: 10px;
+    }
+    .boton.active::before {
+        transform: translateY(0px) rotate(45deg);        
+        left: -150px;
+        margin-bottom: 0;
+    }
+    .boton.active::after {
+        transform: translateY(0px) rotate(-45deg);       
+        left: -150px;
+        margin-top: 0;
+    }
+    .perfil-profesional{
+        text-align: justify; 
+    }
+    .perfil-profesional h2{
+        text-align: center;
+        font-size: 4rem;
+    }
+    .btn-cv{
+        width: 20rem;
+        height: 4rem;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 36px;
+    }
+    h2{
+        text-align: center;
+        font-size: 5rem;
+    }
+    .sobre_mi{
+        padding-top: 7rem;
+    }
+    .habilidades{
+        padding-top: 7rem;
+    }
+    .habilidades ul li{
+        list-style: none;
+    }
+    .proyectos{
+        padding-top: 7rem;
+    }
+    .contenedor-proyectos{
+        flex-direction: column;
+    }
+    .carta{
+        grid-template-columns: 1fr;
+        grid-template-rows: 500px 210px 200px;
+    }
+    .texto-carta h3{
+        font-size: 2em;
+    }
+    .imagen-carta-uno{
+        background-size: cover;
+        background-position-y: center;
+    }
+    .imagen-carta-dos{
+        background-size: cover;
+        background-position-y: center;
+    }
+    .imagen-carta-tres{
+        background-size: cover;
+        background-position-y: center;
+    }
+    .botones-carta{
+        grid-template-columns: 1fr;        
+    }
+    .botones-carta .enlace{
+        grid-template-columns: 1fr;
+        height: 100px;
+        font-size: 2.5em;
+        border-bottom: 1px solid #000335;
+    }
+    .botones-carta .codigo{
+        height: 100px;
+        font-size: 2.5em;
+        border-top: 1px solid #000335;
+    }
+/*     .contacto h2{
+        width: 100%;
+        text-align: center;
+    }
+    
+    .contacto .formulario-contacto{
+        height: 44rem;
+    }
+    .contacto .formulario-contacto .campo {
+        width: 85%;
+        height: 5.5rem;
+        margin-bottom: 1rem;
+        font-size: 2rem;
+    }
+    .contacto .formulario-contacto .campo-mensaje{
+        height: 20rem;
+        width: 85%;
+        font-size: 2rem;
+    }
+    .contacto .formulario-contacto .enviar {
+        width: 85%;
+        height: 3.5rem;
+        font-size: 34px;
+    } */
+}
