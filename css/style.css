@@ -134,8 +134,8 @@ p{
 .boton{
     position: relative;
     left: 0;
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -182,9 +182,12 @@ p{
     height: 3rem;
     color: white;
     text-decoration: none;
+    border-radius: 15px;
+}
+.btn h4{
     font-family: 'Oswald', sans-serif;
     font-size: 26px;
-    border-radius: 15px;
+    font-weight: normal;
 }
 .btn-cv{
     position: relative;
@@ -249,7 +252,7 @@ p{
 .perfil-profesional h2{
     margin-bottom: 15px;
     font-family: 'Oswald', sans-serif;
-    font-size: 4rem;
+    font-size: 2.5em;
     color: #00045B;
 }
 .perfil-profesional{
@@ -261,7 +264,7 @@ p{
 h2{
     margin-bottom: 15px;
     font-family: 'Oswald', sans-serif;
-    font-size: 3.5rem;
+    font-size: 2.5em;
     color: #00045B;
 }
 .sobre_mi{
@@ -290,7 +293,9 @@ h2{
 .contenedor-proyectos{
     display: flex;
     overflow: hidden;
-    justify-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-bottom: 3rem;
 }
 .carta{
     display: grid;
@@ -302,8 +307,8 @@ h2{
     background-color: white;
     box-shadow: 4px 4px 11px rgba(0,0,0,0.9);
     text-align: center;
-    margin: 40px;
     transition: .5s;
+    margin-top: 40px;
 }
 .imagen-carta-uno{
     grid-area: imagen-carta;/* 
@@ -466,40 +471,25 @@ h2{
     opacity: .7;
 }
 
-/*responsive*/
 
-@media (max-width: 991px)
-{
+@media (max-width: 900px){
     p{
         font-size: calc(1em + 1vw) 
     }
-    .seccion{
-        flex-direction: column;
-        padding: 40px;
-        justify-content: center;
-    }
     .header{
-        padding: 40px 40px;
+        padding: 40px 50px;
     }
-    .contenedor-perfil{
-        flex-direction: column;
-        justify-content: center;
-        margin-top: 2.6rem;
-        
-    }
-    .seccion .contenedor-perfil .foto-perfil{
-        width: 21rem;
-        margin-left: auto;
-        margin-right: auto;
-        filter: none;
-        margin-bottom: 2rem;
-        margin-top: 1.5rem;
-    }
-    .contenedor-perfil .perfil-profesional{
-        margin: 0
+    .nav-items{
+        width: auto;
     }
     .banner{
         width: 0;
+    }
+    .nav-items ul {
+        width: none;
+    }
+    .nav-items{
+        width: auto;
     }
 
     .nav-items ul li{
@@ -512,26 +502,22 @@ h2{
         margin-left: 0;
         color: white;
     }
-    .btn{
-        
-        background: #00045B;
-        width: 14rem;
-        height: 4rem;
-        color: white;
+    .contenedor-perfil{
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 2.6rem;
+        margin-bottom: 0;        
     }
-    .btn img{
-        width: 5rem;
-        margin:0;
+    .seccion {
+        padding: 4rem 4rem;
     }
-    .boton::before {
-        width: 60px;
-        height: 6px;
-        margin-bottom: 10px;
-    }
-    .boton::after {
-        width: 60px;
-        height: 6px;
-        margin-top: 10px;
+    .seccion .contenedor-perfil .foto-perfil {
+        width: 21rem;
+        margin-left: auto;
+        margin-right: auto;
+        filter: none;
+        margin-bottom: 2rem;
+        margin-top: 1.5rem;
     }
     .boton.active::before {
         transform: translateY(0px) rotate(45deg);        
@@ -543,42 +529,31 @@ h2{
         left: -150px;
         margin-top: 0;
     }
-    .perfil-profesional{
-        text-align: justify; 
+    .perfil-profesional {
+        margin-left: 0;
     }
-    .perfil-profesional h2{
+    .perfil-profesional h2 {
         text-align: center;
-        font-size: 4rem;
     }
-    .btn-cv{
-        width: 20rem;
-        height: 4rem;
-        margin-left: auto;
-        margin-right: auto;
-        font-size: 36px;
+    .btn-cv {
+    margin: auto;
     }
-    h2{
+    h2 {
         text-align: center;
-        font-size: 5rem;
-    }
-    .sobre_mi{
-        padding-top: 7rem;
-    }
-    .habilidades{
-        padding-top: 7rem;
-    }
-    .habilidades ul li{
-        list-style: none;
     }
     .proyectos{
         padding-top: 7rem;
     }
     .contenedor-proyectos{
         flex-direction: column;
+        overflow: visible;
     }
     .carta{
         grid-template-columns: 1fr;
-        grid-template-rows: 500px 210px 200px;
+        grid-template-rows: 500px 250px 160px;
+        margin: 0;
+        margin-bottom: 30px;
+        margin-top: 30px;
     }
     .texto-carta h3{
         font-size: 2em;
@@ -600,14 +575,183 @@ h2{
     }
     .botones-carta .enlace{
         grid-template-columns: 1fr;
-        height: 100px;
-        font-size: 2.5em;
+        height: 80px;
+        font-size: 1.5em;
         border-bottom: 1px solid #000335;
+        border-right: none;
     }
     .botones-carta .codigo{
-        height: 100px;
-        font-size: 2.5em;
+        height: 80px;
+        font-size: 1.5em;
         border-top: 1px solid #000335;
+        border-left: none;
+    }
+    .carta:hover{
+        transform: none;
+    }
+}
+
+
+/*responsive moviles grandes*/
+
+@media (max-width: 550px)
+{
+    p{
+        font-size: calc(1em + 1vw) 
+    }
+    .seccion{
+        flex-direction: column;
+        padding: 40px;
+        justify-content: center;
+    }
+    .header{
+        padding: 40px 40px;
+    }
+    .contenedor-perfil{
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 2.6rem;
+        margin-bottom: 0;
+        
+    }
+    .seccion .contenedor-perfil .foto-perfil{
+        width: 21rem;
+        margin-left: auto;
+        margin-right: auto;
+        filter: none;
+        margin-bottom: 2rem;
+        margin-top: 1.5rem;
+    }
+    .contenedor-perfil .perfil-profesional{
+        margin: 0
+    }
+    .banner{
+        width: 0;
+    }
+    .nav-items ul {
+        width: none;
+    }
+    .nav-items{
+        width: auto;
+    }
+
+    .nav-items ul li{
+        margin-bottom: 4rem;
+        text-align: center;
+
+    }
+    .nav-items ul li a{
+        font-size: 4em;
+        margin-left: 0;
+        color: white;
+    }
+    .btn {
+        background: #00045B;
+        width: 0;
+        height: 4rem;
+        color: white;
+    }
+    .btn h4{
+        display: none;
+    }
+    .btn img{
+        width: 4rem;
+        margin:0;
+        margin-right: 4.5rem;
+    }
+    .boton::before {
+        width: 40px;
+        height: 4px;
+        margin-bottom: 10px;
+    }
+    .boton::after {
+        width: 40px;
+        height: 4px;
+        margin-top: 10px;
+    }
+    .boton.active::before {
+        transform: translateY(0px) rotate(45deg);        
+        left: -150px;
+        margin-bottom: 0;
+    }
+    .boton.active::after {
+        transform: translateY(0px) rotate(-45deg);       
+        left: -150px;
+        margin-top: 0;
+    }
+    .perfil-profesional{
+        text-align: justify; 
+    }
+    .perfil-profesional h2{
+        text-align: center;
+        font-size: 2.5em;
+    }
+    .btn-cv{
+        width: 20rem;
+        height: 4rem;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 36px;
+    }
+    h2{
+        text-align: center;
+    }
+    .sobre_mi{
+        padding-top: 7rem;
+    }
+    .habilidades{
+        padding-top: 7rem;
+    }
+    .habilidades ul li{
+        list-style: none;
+    }
+    .proyectos{
+        padding-top: 7rem;
+    }
+    .contenedor-proyectos{
+        flex-direction: column;
+        overflow: visible;
+    }
+    .carta{
+        grid-template-columns: 1fr;
+        grid-template-rows: 370px 250px 120px;
+        margin: 0;
+        margin-bottom: 30px;
+        margin-top: 30px;
+    }
+    .texto-carta h3{
+        font-size: 2em;
+    }
+    .imagen-carta-uno{
+        background-size: cover;
+        background-position-y: center;
+    }
+    .imagen-carta-dos{
+        background-size: cover;
+        background-position-y: center;
+    }
+    .imagen-carta-tres{
+        background-size: cover;
+        background-position-y: center;
+    }
+    .botones-carta{
+        grid-template-columns: 1fr;        
+    }
+    .botones-carta .enlace{
+        grid-template-columns: 1fr;
+        height: 60px;
+        font-size: 1.5em;
+        border-bottom: 1px solid #000335;
+        border-right: none;
+    }
+    .botones-carta .codigo{
+        height: 60px;
+        font-size: 1.5em;
+        border-top: 1px solid #000335;
+        border-left: none;
+    }
+    .carta:hover{
+        transform: none;
     }
 /*     .contacto h2{
         width: 100%;
@@ -633,4 +777,102 @@ h2{
         height: 3.5rem;
         font-size: 34px;
     } */
+    .foot {
+        padding: 22px 100px;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+    }
+    .copyright {
+        margin-top: 25px;
+    }
+}
+
+/* responsive moviles pequeños */
+
+@media (max-width: 380px){
+    .banner {
+        width: 0;
+    }
+    .nav-items ul li {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    .nav-items ul li a {
+        font-size: 3em;
+        margin-left: 0;
+        color: white;
+    }
+    .boton.active::before {
+        transform: translateY(0px) rotate(45deg);
+        left: -120px;
+    }
+    .boton.active::after {
+        transform: translateY(0px) rotate(-45deg);
+        left: -120px;
+    }
+
+    .seccion {
+        padding: 20px;
+    }
+    .header {
+        padding: 20px 30px;
+    }
+
+    .seccion .contenedor-perfil .foto-perfil {
+        width: 17rem;
+        min-width: 17rem;
+        height: 17rem;
+        padding-left: 17px;
+    }
+    .foto-perfil img:not(:hover) {
+        height: 17.5rem;
+        width: 14.5rem;
+    }
+    .foto-perfil img:hover {
+        display: none;
+    }
+    .perfil-profesional h2 {
+        font-size: 2em;
+    }
+    .contenedor-perfil {
+        margin-top: 1.3rem;
+        margin-bottom: 0;        
+    }
+    .sobre_mi {
+        padding-top: 4.5rem;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    .habilidades {
+        padding-top: 4.5rem;
+    }
+    .proyectos {
+        padding-top: 4.5rem;
+    }
+    .carta {
+        grid-template-rows: 300px 270px 100px;
+    }
+    .botones-carta .codigo {
+        border-top: 1px solid #000335; 
+        border-left: none; 
+        height: 50px;
+        font-size: 1.5em;
+    }
+    .botones-carta .enlace {
+        border-bottom: 1px solid #000335;
+        border-right: none; 
+        height: 50px;
+        font-size: 1.5em;
+    }
+    .foot {
+        padding: 22px 100px;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+    }
+    .copyright {
+        margin-top: 15px;
+    }
 }
