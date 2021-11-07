@@ -9,7 +9,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: rgb(169, 239, 255);
+    background-color: white;
     flex-direction: column;
 }
 .principal{
@@ -24,6 +24,7 @@ body{
     display: grid;
     grid-template-columns: 1fr 2fr;
     box-shadow: 0 35px 55px rgba(0, 0, 0, 0.3);
+    border: 1px solid black;
 }
 .col-izq{
     position: relative;
@@ -253,10 +254,10 @@ p{
     color: white
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1010px) {
 
     .principal{
-        margin: 10px;
+        margin: 0px;
         grid-template-columns: repeat(1, 1fr);
     }
     .intereses ul{
@@ -299,17 +300,78 @@ p{
     .lenguajes ul li{
         font-size: 1.8em;
     }
+    .intereses ul li {
+        margin-bottom: 15px;
+    }
     .btnDescargar{
         width: 100%;
         height: 6rem;
-        
+        margin-bottom: 0;
     }
     
 }
 @media (max-width: 780px){    
+    .principal{
+        margin: 0;
+        grid-template-columns: repeat(1, 1fr);
+        max-width: 100%;
+    }
     .habilidades .contenedor{
         grid-template-columns:repeat(1, 1fr);
         margin-top: 15px;
     }
     
+}
+
+@media (max-width: 550px)
+{
+    .principal{
+        margin: 0;
+        grid-template-columns: repeat(1, 1fr);
+        max-width: 100%;
+    }
+
+    .perfil-profesional .contenedor-foto {
+        width: 220px;
+        height: 240px;
+    }
+    .col-izq {
+        padding: 20px;
+    }
+    .info-contacto h3 {
+        font-size: 1.5em;
+    }
+    .educacion h3 {
+        font-size: 1.5em;
+    }
+    .lenguajes h3 {
+        font-size: 1.5em;
+    }
+    .lenguajes ul li {
+        font-size: 1.3em;
+    }
+
+    .col-der {
+        padding: 20px;
+    }
+    .titulo-dos {
+        font-size: 2em;
+    }
+    .habilidades .contenedor{
+        grid-template-columns: unset;
+    }
+    .habilidades .contenedor h4 {
+        margin-top: 10px;
+    }
+    .intereses ul {
+        grid-template-columns: unset;
+    }
+    .intereses ul li {
+        list-style: none;
+        padding-bottom: 15px;
+    }
+    .btnDescargar {
+        height: 5rem;
+        margin-bottom: 0;;
+    }
 }
