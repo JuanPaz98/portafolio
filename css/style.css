@@ -142,6 +142,9 @@ p{
     cursor: pointer;
     transition: 0.5s;
 }
+.boton.active{
+    left: -200;
+}
 .boton::before {
     position: absolute;
     content: " ";
@@ -202,6 +205,14 @@ p{
     font-family: 'Oswald', sans-serif;
     font-size: 26px;
     border-radius: 15px;
+    cursor: pointer;
+    border: none;
+}
+.download-cv{
+    text-decoration: none;
+    color: white;
+    display: block;
+    width: 13rem;
 }
 .btn:hover{
     font-weight: bold;
@@ -221,7 +232,6 @@ p{
     height: 22rem;
     border-radius: 50%;
     overflow: hidden;
-    padding-left: 30px;;
     box-shadow: 0px 0px 15px #090909;
     filter:grayscale(80%)
 }
@@ -230,21 +240,16 @@ p{
     box-shadow: 0px 0px 15px #0009b5;
     transition: .5s;
 }
-.foto-perfil img{
-    position: absolute;
-    height: 22.5rem;
-    width: 17.2rem;
-}
 .foto-perfil img:hover{
     height: 23.5rem;
-    width: 18rem;
+    width: 24rem;
     bottom: 0;
     transition: 1s;
 }
 
 .foto-perfil img:not(:hover){
-    height: 22.5rem;
-    width: 17.2rem;
+    height: 22rem;
+    width: 22rem;
     bottom: 0;
     transition: 1s;
 }
@@ -283,6 +288,41 @@ h2{
 }
 .habilidades ul li{
     list-style: none;
+}
+.slider-principal{    
+    padding: 40px 0;
+}
+.slider-container{
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    align-items: center;
+    gap: 1em;
+} 
+.slider-body{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    opacity: 0;
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    align-items: center;
+    transition: opacity 1.5s;
+    pointer-events: none;
+    gap: 1em;
+}
+.slider-body--show{
+    opacity: 1;
+    pointer-events: unset;
+}
+.slider-img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #f2f2f2;
+    object-fit: cover;
+}
+.slider-arrow{
+    cursor: pointer;
+    width: 3em;
 }
 .proyectos{
     position: relative;
@@ -375,69 +415,6 @@ h2{
 .carta:hover{
     transform: scale(1.1);
 }
-
-/* .contacto {
-    position: relative;
-    display:flex;
-    flex-wrap: wrap;
-    margin-left: auto;
-    margin-right: auto;
-    width: 40rem;   
-    padding-top: 6rem;
-}
-.contacto h2{
-    width: 100%;
-    text-align: center;
-    
-}
-.contacto .formulario-contacto{
-    width: 100%;
-    width: 40rem;
-    height: 24rem;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #00045B;
-    box-shadow: 0px 0px 20px black;
-    border-radius: 25px;
-}
-.contacto .formulario-contacto .campo{
-    width: 80%;
-    height: 2.5rem;
-    margin: .5rem;
-    border-radius: 15px;
-    border:none;
-    text-align: center;
-    opacity: .9;
-    font-size:20px;
-}
-.contacto .formulario-contacto .campo-mensaje{
-    width: 80%;
-    height: 9rem;
-    margin: .5rem;
-    border-radius: 15px;
-    opacity: .9;
-    resize: none;
-    padding: .5rem;
-    font-size:20px;
-}
-.contacto .formulario-contacto .enviar{
-    width: 80%;
-    height: 2.5rem;
-    margin-top: .5rem;    
-    border-radius: 10px;
-    font-size: 22px;
-    font-family: 'Oswald', sans-serif;
-    color:#00045B;
-    border:none;
-}
-.contacto .formulario-contacto .enviar:hover{
-    cursor: pointer;
-    font-weight: bold;
-    border:none;
-} */
 .foot{
     position: relative;
     display:flex;
@@ -753,30 +730,6 @@ h2{
     .carta:hover{
         transform: none;
     }
-/*     .contacto h2{
-        width: 100%;
-        text-align: center;
-    }
-    
-    .contacto .formulario-contacto{
-        height: 44rem;
-    }
-    .contacto .formulario-contacto .campo {
-        width: 85%;
-        height: 5.5rem;
-        margin-bottom: 1rem;
-        font-size: 2rem;
-    }
-    .contacto .formulario-contacto .campo-mensaje{
-        height: 20rem;
-        width: 85%;
-        font-size: 2rem;
-    }
-    .contacto .formulario-contacto .enviar {
-        width: 85%;
-        height: 3.5rem;
-        font-size: 34px;
-    } */
     .foot {
         padding: 22px 100px;
         display: flex;
